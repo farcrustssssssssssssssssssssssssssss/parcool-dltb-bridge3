@@ -4,8 +4,7 @@ plugins {
 }
 
 repositories {
-    // ParCool is taken from Modrinth Maven (same source ParCool itself documents for addon developers)
-    maven {
+}
         url = 'https://api.modrinth.com/maven'
         content { includeGroup 'maven.modrinth' }
     }
@@ -31,7 +30,7 @@ dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
     compileOnly fg.deobf("maven.modrinth:Fsvx2bdR:${parcool_version}")
-    compileOnly fg.deobf(":ktstamina:1.0.0")
+    compileOnly files('libs/ktstamina-1.0.0.jar')
 }
 
 processResources {
